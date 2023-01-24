@@ -2,10 +2,11 @@ var express = require('express');
 const { connect } = require('.');
 var router = express.Router();
 const mysql = require('mysql2');
+const { getAll } = require('../models/clientes.model');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  db.query('SELECT * FROM clientes')
+  getAll()
   .then((result) => {
     res.json(result[0]);
   })

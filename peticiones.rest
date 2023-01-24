@@ -2,4 +2,7 @@
 GET http://localhost:3000/api/clientes
 
 ###
-GET http://localhost:3000/api/clientes/1
+GET http://localhost:3000/api/clientes/2
+
+###
+GET http://localhost:3000/api/clientes/dni/
