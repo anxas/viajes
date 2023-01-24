@@ -25,6 +25,12 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 //GET clietnes por id
-router.get('/:clienteId',(req, res)=>{
-  const clienteId = parseInt(req.params.clienteId);
+router.get('/:clientesId',(req, res)=>{
+  const clientesId = parseInt(req.params.clientesId);
+  conn.connect((err)=>{
+    conn.query('SELECT * FROM clientes WHERE clientes.id=?',
+    [clientesId], (err, result)=>{
+      res.json(result)
+    })
+  })
 })
