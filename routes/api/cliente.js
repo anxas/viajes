@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, getById, create, deleteById, update } = require('../../models/clientes.model');
+const { getAll, getById, create, deleteById, update } = require('../../models/cliente.model');
 
 
 
@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get ('/:clientesId', async (req,res) =>{
-  const {clientesId} = req.params;
+router.get ('/:clienteId', async (req,res) =>{
+  const {clienteId} = req.params;
   
   try {
-    const [result] = await getById(clientesId);
+    const [result] = await getById(clienteId);
     res.json(result[0]);
   } catch (error) {
     res.json({fatal: error.message})
@@ -37,11 +37,11 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:clientesId', async (req, res) => {
-  const { clientesId } = req.params;
+router.delete('/:clienteId', async (req, res) => {
+  const { clienteId } = req.params;
 
   try {
-      const [result] = await deleteById(clientesId);
+      const [result] = await deleteById(clienteId);
       res.json({ message: 'Cliente borrado' });
   } catch (error) {
       res.json({ fatal: error.message });
@@ -49,13 +49,13 @@ router.delete('/:clientesId', async (req, res) => {
 });
 
 
-router.put('/:clientesId', async (req, res) => {
-  const { clientesId } = req.params;
+router.put('/:clienteId', async (req, res) => {
+  const { clienteId } = req.params;
 
   try {
-      const [result] = await update(clientesId, req.body);
+      const [result] = await update(clienteId, req.body);
 
-      const [cliente] = await getById(clientesId);
+      const [cliente] = await getById(clienteId);
 
       res.json(cliente[0]);
   } catch (error) {

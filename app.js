@@ -7,11 +7,10 @@ const cors = require('cors');
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var clientesRouter = require('./routes/api/clientes');
-var viajesRouter = require('./routes/api/viajes');
-var hotelesRouter = require('./routes/api/hoteles');
-const apiRouter = require('./routes/api')
+var clientesRouter = require('./routes/api/cliente');
+var viajesRouter = require('./routes/api/viaje');
+var hotelesRouter = require('./routes/api/hotel');
+
 
 
 var app = express();
@@ -24,11 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/clientes', clientesRouter);
-app.use('/api/viajes', viajesRouter);
-app.use('/api/hoteles', hotelesRouter);
-app.use('api', apiRouter);
+app.use('/api/cliente', clientesRouter);
+app.use('/api/viaje', viajesRouter);
+app.use('/api/hotel', hotelesRouter);
+
 
 
 module.exports = app;
