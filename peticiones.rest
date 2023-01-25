@@ -23,3 +23,17 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/clientes/5
+
+###
+PUT http://localhost:3000/api/clientes/2
+Content-Type: application/json
+
+{
+  "nombre": "elena",
+  "apellidos": "jimenez",
+  "direccion": "paseo san juan 23",
+  "telefono": 783672892,
+  "fecha_nacimiento": "1983-01-22T23:00:00.000Z",
+  "email": "helena@gmail.com",
+  "dni": "17283902J"
+}

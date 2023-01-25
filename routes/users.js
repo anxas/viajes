@@ -46,3 +46,11 @@ router.delete('/delete/:clientesId', (req, res) => {
   console.log(parseInt(req.params.clientesId));
   res.send('Borrando un cliente')
 })
+
+router.get('/edit', (req, res) => {
+  res.send('Formulario de actualizacion de un cliente');
+});
+
+router.put('/update', (req, res) => {
+  res.send('Actualizo al cliente')
+})

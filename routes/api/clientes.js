@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, getById, create, deleteById } = require('../../models/clientes.model');
+const { getAll, getById, create, deleteById, update } = require('../../models/clientes.model');
 
 
 
@@ -47,5 +47,21 @@ router.delete('/:clientesId', async (req, res) => {
       res.json({ fatal: error.message });
   }
 });
+
+
+router.put('/:clientesId', async (req, res) => {
+  const { clientesId } = req.params;
+
+  try {
+      const [result] = await update(clientesId, req.body);
+
+      const [cliente] = await getById(clientesId);
+
+      res.json(cliente[0]);
+  } catch (error) {
+      res.json({ fatal: error.message });
+  }
+});
+
 
 module.exports = router;
