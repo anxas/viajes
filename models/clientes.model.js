@@ -16,9 +16,14 @@ const create = ({ nombre, apellidos, direccion, email, telefono, dni, fecha_naci
         [nombre, apellidos, direccion, email, telefono,dni, fecha_nacimiento]
     );
 }
+
+const deleteById = (clientId) => {
+    return db.query('delete from clientes where id = ?', [clientId]);
+}
 module.exports = {
     getAll,
     getById,
     getByDni,
-    create
+    create,
+    deleteById
 }

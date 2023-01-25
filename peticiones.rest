@@ -20,3 +20,6 @@ Content-Type: application/json
     "email": "paco12345@gmail.com",
     "dni": "28296162M"
 }
+
+###
+DELETE http://localhost:3000/api/clientes/5

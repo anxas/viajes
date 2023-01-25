@@ -41,3 +41,8 @@ router.post('/create', (req, res) => {
   res.send('Crear un nuevo cliente');
 });
 
+router.delete('/delete/:clientesId', (req, res) => {
+ 
+  console.log(parseInt(req.params.clientesId));
+  res.send('Borrando un cliente')
+})
