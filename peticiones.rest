@@ -1,28 +1,28 @@
 ###
-GET http://localhost:3000/api/clientes
+GET http://localhost:3000/api/cliente
 
 ###
-GET http://localhost:3000/api/clientes/2
+GET http://localhost:3000/api/cliente/2
 
 ###
-POST http://localhost:3000/api/clientes
+POST http://localhost:3000/api/cliente
 Content-Type: application/json
 
 {
-    "nombre": "Luis",
-    "apellidos": "garcia",
-    "direccion": "libertad 45",
-    "telefono": 664436758,
-    "fecha_nacimiento": "1990-09-13",
-    "email": "paco12345@gmail.com",
-    "dni": "28296162M"
+     "nombre": "elena",
+  "apellidos": "jimenez",
+  "direccion": "paseo san juan 23",
+  "telefono": 783672892,
+  "fecha_nacimiento": "1983-01-22",
+  "email": "helena@gmail.com",
+  "dni": "17283902J"
 }
 
 ###
-DELETE http://localhost:3000/api/clientes/5
+DELETE http://localhost:3000/api/cliente/5
 
 ###
-PUT http://localhost:3000/api/clientes/2
+PUT http://localhost:3000/api/cliente/2
 Content-Type: application/json
 
 {
@@ -42,30 +42,30 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/api/hoteles
+GET http://localhost:3000/api/hotel
 
 ###
-GET http://localhost:3000/api/hoteles/1
+GET http://localhost:3000/api/hotel/1
 
 
 ###
-POST http://localhost:3000/api/hoteles
+POST http://localhost:3000/api/hotel
 Content-Type: application/json
 
 {
-    "nombre": "Palace",
+    "nombre": "Palacito",
     "direccion": "c. rio verde 67",
-    "ciudad": "vigo",
+    "ciudad": "Barcelona",
     "numero_estrellas": "4",
     "descripcion": "Hotel bien ubicado en el centro de vigo",
     "tarifa": "60.00"
 }
 
 ###
-DELETE http://localhost:3000/api/hoteles/5
+DELETE http://localhost:3000/api/hotel/5
 
 ###
-PUT http://localhost:3000/api/hoteles/2
+PUT http://localhost:3000/api/hotel/2
 Content-Type: application/json
 
 {
@@ -82,34 +82,36 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/api/viajes
+GET http://localhost:3000/api/viaje
 
 ###
-GET http://localhost:3000/api/viajes/1
+GET http://localhost:3000/api/viaje/4
 
 ###
-POST http://localhost:3000/api/viajes
+POST http://localhost:3000/api/viaje
 Content-Type: application/json
 
 {
-    "fecha_salida": "2023-10-01",
+    "fecha_salida": "2025-10-01",
     "fecha_vuelta": "2023-11-01",
-    "id_ida": "234756VLG",
-    "id_vuelta": "953847IBR",
-    "hotel": "Sphere"
+    "id_ida": "234754VLG",
+    "id_vuelta": "951847IBR",
+    "hotel_id": 5,
+    "cliente_id": 7
 }
 
 ###
-DELETE http://localhost:3000/api/viajes/5
+DELETE http://localhost:3000/api/viaje/5
 
 ###
-PUT http://localhost:3000/api/viajes/2
+PUT http://localhost:3000/api/viaje/2
 Content-Type: application/json
 
 {
-    "fecha_salida": "2023-10-01",
+    "fecha_salida": "2025-10-01",
     "fecha_vuelta": "2023-11-01",
-    "id_ida": "234786VLG",
-    "id_vuelta": "923847IBR",
-    "hotel": "Sphere"
+    "id_ida": "234754VLG",
+    "id_vuelta": "951847IBR",
+    "hotel_id": 5,
+    "cliente_id": 7
 }
