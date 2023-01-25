@@ -4,9 +4,6 @@ GET http://localhost:3000/api/clientes
 ###
 GET http://localhost:3000/api/clientes/2
 
-
-
-
 ###
 POST http://localhost:3000/api/clientes
 Content-Type: application/json
@@ -36,4 +33,83 @@ Content-Type: application/json
   "fecha_nacimiento": "1983-01-22T23:00:00.000Z",
   "email": "helena@gmail.com",
   "dni": "17283902J"
+}
+
+
+
+
+
+
+
+###
+GET http://localhost:3000/api/hoteles
+
+###
+GET http://localhost:3000/api/hoteles/1
+
+
+###
+POST http://localhost:3000/api/hoteles
+Content-Type: application/json
+
+{
+    "nombre": "Palace",
+    "direccion": "c. rio verde 67",
+    "ciudad": "vigo",
+    "numero_estrellas": "4",
+    "descripcion": "Hotel bien ubicado en el centro de vigo",
+    "tarifa": "60.00"
+}
+
+###
+DELETE http://localhost:3000/api/hoteles/5
+
+###
+PUT http://localhost:3000/api/hoteles/2
+Content-Type: application/json
+
+{
+   "nombre": "Palace",
+    "direccion": "c. rio verde 67",
+    "ciudad": "vigo",
+    "numero_estrellas": "4",
+    "descripcion": "Hotel bien ubicado en el centro de vigo",
+    "tarifa": "60.00"
+}
+
+
+
+
+
+###
+GET http://localhost:3000/api/viajes
+
+###
+GET http://localhost:3000/api/viajes/1
+
+###
+POST http://localhost:3000/api/viajes
+Content-Type: application/json
+
+{
+    "fecha_salida": "2023-10-01",
+    "fecha_vuelta": "2023-11-01",
+    "id_ida": "234756VLG",
+    "id_vuelta": "953847IBR",
+    "hotel": "Sphere"
+}
+
+###
+DELETE http://localhost:3000/api/viajes/5
+
+###
+PUT http://localhost:3000/api/viajes/2
+Content-Type: application/json
+
+{
+    "fecha_salida": "2023-10-01",
+    "fecha_vuelta": "2023-11-01",
+    "id_ida": "234786VLG",
+    "id_vuelta": "923847IBR",
+    "hotel": "Sphere"
 }
