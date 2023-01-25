@@ -31,3 +31,13 @@ router.get('/:clientesId',(req, res)=>{
 })
 
 //put 
+router.get('/new', (req, res) => {
+  res.send('Muestra el formulario de nuevo cliente');
+});
+
+router.post('/create', (req, res) => {
+  console.log(req);
+  console.log(req.body);
+  res.send('Crear un nuevo cliente');
+});
+

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, getById, getByDni } = require('../../models/clientes.model');
+const { getAll, getById, create } = require('../../models/clientes.model');
 
 
 
@@ -25,17 +25,17 @@ router.get ('/:clientesId', async (req,res) =>{
 
 })
 
-router.get ('/dni/:clientesdni', async (req,res) =>{
-  const {clientesDni} = req.params;
-  
+router.post('/', async (req, res) => {
   try {
-    const [result] = await getByDni(clientesDni);
-    res.json(result[0]);
-  } catch (error) {
-    res.json({fatal: error.message})
-  }
+      const [result] = await create(req.body);
 
-})
+      const [cliente] = await getById(result.insertId);
+
+      res.json(cliente[0]);
+  } catch (error) {
+      res.json({ fatal: error.message })
+  }
+});
 
 
 module.exports = router;

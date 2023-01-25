@@ -4,5 +4,19 @@ GET http://localhost:3000/api/clientes
 ###
 GET http://localhost:3000/api/clientes/2
 
+
+
+
 ###
-GET http://localhost:3000/api/clientes/dni/
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Luis",
+    "apellidos": "garcia",
+    "direccion": "libertad 45",
+    "telefono": 664436758,
+    "fecha_nacimiento": "1990-09-13",
+    "email": "paco12345@gmail.com",
+    "dni": "28296162M"
+}
